@@ -1,0 +1,39 @@
+top : Model -> Html Messages.Msg
+top model =
+    header [ class "mdc-toolbar mdc-toolbar--fixed demo-toolbar" ]
+            [ div [ class "mdc-toolbar__row" ]
+                [ section [ class "mdc-toolbar__section mdc-toolbar__section--align-start" ]
+                    [ a [ class "material-icons mdc-toolbar__menu-icon", href "#" ]
+                        [ text "menu" ]
+                    , currencySelector model.selectedCurrency
+                    , button [ class "mdc-button mdc-button--raised mdc-button--dense"
+                             , attribute "style" "margin-top: 1em; margin-left:0.5em"
+                             , onClick (AnalysisMsg (GetChartData model.selectedCurrency))
+                             ]
+                             [ text "Select Currency" ]
+                    ]
+                , section [ class "mdc-toolbar__section mdc-toolbar__section--align-end", attribute "role" "toolbar" ]
+                    [ a [ alt "Download", attribute "aria-label" "Download", class "material-icons mdc-toolbar__icon", href "#/trades" ]
+                        [ text "trending_up" ]
+                    , a [ alt "Print this page", attribute "aria-label" "Print this page", class "material-icons mdc-toolbar__icon", href "#/analysis" ]
+                        [ text "notifications" ]
+                    , a [ alt "Bookmark this page", attribute "aria-label" "Bookmark this page", class "material-icons mdc-toolbar__icon", href "#" ]
+                        [ text "event_note" ]
+                    ]
+                ]
+            ]
+
+
+onBlurWithTargetValue : (String -> msg) -> Attribute msg
+onBlurWithTargetValue tagger =
+    on "blur" (Json.map tagger targetValue)
+
+
+currencySelector : String -> Html Messages.Msg
+currencySelector pairId =
+    div [ class "mdc-text-field", attribute "style" "margin-top: 1em" ]
+          [ input [ class "mdc-text-field__input", id "selectedPair", type_ "text", onInput SelectCurrency ]
+                  [ ]
+          , label [ class "mdc-text-field__label", for "selectedPair" ] [ ]
+          , div [ class "mdc-line-ripple", attribute "style" "transform-origin: 86.5px center" ] []
+          ]

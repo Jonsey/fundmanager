@@ -1,0 +1,77 @@
+@import './mixins.scss';
+
+.home-page {
+  width: 100%;
+
+  &__content {
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+
+      &__analysis {
+        width: 95%;
+        margin: 1em auto;
+      }
+
+      &__trade {
+
+        width: 95%;
+        margin: 1em auto;
+
+        .account-balances {
+          margin-bottom: 1em;
+        }
+      }
+  }
+}
+
+.account-balances {
+  @include shadow;
+
+  padding: 0.8em;
+  border-radius: 1em;
+}
+
+.trader {
+  @include shadow;
+
+  padding: 0.8em;
+  border-radius: 1em;
+
+  &__row {
+    margin-bottom: 1em;
+
+    &__title {
+      margin-bottom: 0.3em ;
+    }
+
+    .trade-button {
+      margin-left: 0.5em;
+      width: 4.3em;
+    }
+  }
+
+  &__row--buy {
+    display: flex;
+    align-items: center;
+
+    margin-top: 2em;
+
+    .trader__amount {
+      display: flex;
+      align-items: center;
+    }
+
+    .trader__buy-button {
+      margin-left: 1em;
+    }
+  }
+}
+
+.currency-selector {
+  display: flex;
+  margin: 1em 0;
+
+  &__button {
+    margin-left: 1em;
+  }
+}

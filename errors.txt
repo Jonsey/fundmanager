@@ -1,0 +1,56 @@
+Close Trade(market) Request:  { quantity: '10.58', pairId: 'EOSBTC' }
+Close Trade(market) Failed response:  Error: Account has insufficient balance for requested action.
+    at /home/damian/projects/fundmanager/dist-server.js:18672:13
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+[]
+
+
+// This did not create an order in frontend
+Order Request:  { side: 'BUY',
+  pairId: 'NXSBTC',
+  amount: '141',
+  price: '0.00002637' }
+Order response:  { symbol: 'NXSBTC',
+  orderId: 27106383,
+  orderListId: -1,
+  clientOrderId: 'vOrrvOiU2OGOlZkVsTn4zQ',
+  transactTime: 1581793440159,
+  price: '0.00002637',
+  origQty: '141.00000000',
+  executedQty: '141.00000000',
+  cummulativeQuoteQty: '0.00369279',
+  status: 'FILLED',
+  timeInForce: 'GTC',
+  type: 'LIMIT',
+  side: 'BUY',
+  fills:
+   [ { price: '0.00002619',
+       qty: '141.00000000',
+       commission: '0.00114456',
+       commissionAsset: 'BNB',
+       tradeId: 2585912 } ] }
+
+
+
+ Order Request:  { pairId: 'GTOBTC', amount: '3878', price: '0.00000124' }
+ Stop Order response:  { symbol: 'GTOBTC',
+   orderId: 59433819,
+   orderListId: -1,
+   clientOrderId: 'JZXTAa8aDTbhhLnjU6BbBW',
+   transactTime: 1581808871547,
+   price: '0.00000000',
+   origQty: '3878.00000000',
+   executedQty: '3878.00000000',
+   cummulativeQuoteQty: '0.00480872',
+   status: 'FILLED',
+   timeInForce: 'GTC',
+   type: 'MARKET',
+   side: 'SELL',
+   fills:
+    [ { price: '0.00000124',
+        qty: '3878.00000000',
+        commission: '0.00147401',
+        commissionAsset: 'BNB',
+        tradeId: 8443198 } ] }
+ Order Request:  { pairId: 'GTOBTC', amount: '3878', price: '0.00000124' }
+ (node:8159) UnhandledPromiseRejectionWarning: Error: Account has insufficient balance for requested action.

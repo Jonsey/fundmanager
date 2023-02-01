@@ -1,0 +1,61 @@
+@import '../../elm/OrderBooks/_style.scss';
+@import './mixins.scss';
+@import './header.scss';
+@import './home.scss';
+@import './page.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    font-size: 16px;
+}
+
+html,
+body {
+    background-color: #ededed;
+    padding: 0.3em 0em;
+}
+
+a {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button {
+    @include shadow;
+
+    outline: none;
+    border: none;
+    border-radius: 1em;
+    background-color: #efefef;
+    padding: 1em;
+
+    font-size: 16px;
+
+    &:hover,
+    &:active {
+        background-color: #ccc;
+    }
+
+    &:active,
+    &--active {
+        @include shadow-inset;
+    }
+}
+
+input[type='text'] {
+    @include shadow-inset;
+
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    background-color: #efefef;
+    padding: 1em;
+}
+
+.chart {
+    height: 300px;
+}

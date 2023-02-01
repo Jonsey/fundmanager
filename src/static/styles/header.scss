@@ -1,0 +1,25 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    &__account {
+      display: flex;
+      justify-content: space-between;
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        ul {
+          list-style: none;
+          li {
+            margin: 1em;
+          }
+        }
+      }
+    }
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
